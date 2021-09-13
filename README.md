@@ -1,5 +1,6 @@
 # A Restaurant Website by express.js
 A website for user to search restaurants by any name or kind 
+
 # Installation & Usage
 
 1. Clone this repository to your local service by the following command line to your teminal
