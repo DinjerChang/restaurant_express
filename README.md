@@ -13,3 +13,8 @@ A website for user to search restaurants by any name or kind
 3. Run ```npm run dev```
 
 4. View webiste at ```http://localhost:3000/
+
+# Enviroments
+. Node.js
+. Express.js
+. Handlebars
