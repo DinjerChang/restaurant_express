@@ -5,15 +5,30 @@ const app = express()
 const exphbs = require('express-handlebars')
 const port = 3000
 const restaurantList = require('./restaurant.json')
+
 // step 2 : set template engine & static file
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
 // setting static files
 app.use(express.static('assets'))
+
 // step 3 : set dynamic route
 app.get('/', (req, res) => {
   res.render('index', { restaurants: restaurantList.results })
 })
+
+// setup database connection
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/restaurant-list')
+const db = mongoose.connection
+db.on('error',() =>{
+  console.log('error')
+})
+db.once('open',() => {
+  console.log('mongo connected')
+})
+
 // show restaurant page deatail 
 app.get('/restaurants/:restaurant_id', (req, res) => {
   const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
@@ -22,8 +37,7 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 // search function
 app.get('/search', (req, res) => {
   const keywords = req.query.keyword.toLowerCase().trim()
-  const restaurants = restaurantList.results.filter(restaurant => restaurant.name.toLowerCase().includes(keywords) || restaurant.category.toLowerCase().includes(keywords))
-  console.log(restaurants.length)
+  const restaurants = restaurantList.results.filter(restaurant => restaurant.name.toLowerCase().includes(keywords) || restaurant.category.toLowerCase().includes(keywords));
   res.render('index', { restaurants: restaurants, keyword: keywords})
 })
 app.listen(port, () => {
