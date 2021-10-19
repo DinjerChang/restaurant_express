@@ -1,6 +1,6 @@
 # A Restaurant Website by express.js
 A website for user to search restaurants by any name or kind 
-
+![image](https://github.com/DinjerChang/restaurant_express/blob/main/assets/stylesheets/restaurant.png)
 # Installation & Usage
 
 1. Clone this repository to your local service by the following command line to your teminal
