@@ -27,6 +27,7 @@ db.once('open', () => {
 
 //setup body-parser
 const bodyParser = require('body-parser')
+const e = require('express')
 app.use(bodyParser.urlencoded({ extended: true })) //"use" 屬性要求每筆請求經過 body-parser 先處理 
 
 // step 3 : set dynamic route
@@ -64,6 +65,13 @@ app.post('/restaurants/:id/edit', (req, res) => {
   const edit_res = req.body
   return Restaurant.findById(id).then(restaurant => {
     restaurant.name = edit_res.name;
+    restaurant.category = edit_res.category;
+    restaurant.image = edit_res.image;
+    restaurant.location = edit_res.location;
+    restaurant.phone = edit_res.phone;
+    restaurant.google_map = edit_res.google_map;
+    restaurant.rating = edit_res.rating;
+    restaurant.description = edit_res.description;
     return restaurant.save()
   }).then(() => {
     res.redirect(`/restaurants/${id}`)
