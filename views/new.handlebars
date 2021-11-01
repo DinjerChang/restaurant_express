@@ -27,29 +27,29 @@
           placeholder="輸入評分 0 到 5.0" value="5">
       </div>
       <div class="form-group col-4">
-        <label for="phone"><i class="fas fa-phone-square-alt mr-1"></i>電話</label>
-        <input type="tel" class="form-control" name="phone" id="phone" placeholder="請輸入店家電話號碼">
+        <label for="phone"><i class="fas fa-phone-square-alt mr-1" required></i>電話</label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="請輸入店家電話號碼" required>
       </div>
     </div>
     <div class="row mb-2">
       <div class="form-group col">
-        <label for="location"><i class="fas fa-home mr-1"></i>地址</label>
-        <input type="text" class="form-control" name="location" id="location" placeholder="清輸入餐廳地址">
+        <label for="location"><i class="fas fa-home mr-1" ></i>地址</label>
+        <input type="text" class="form-control" name="location" id="location" placeholder="清輸入餐廳地址" required>
       </div>
       <div class="form-group col">
         <label for="google_map"><i class="fas fa-map-marked-alt mr-1"></i>Google地圖</label>
-        <input type="text" class="form-control" name="google_map" id="google_map"
-          placeholder="請貼上google地圖網址 https://goo.gl/maps/...">
+        <input type="url" class="form-control" name="google_map" id="google_map"
+          placeholder="請貼上google地圖網址 https://goo.gl/maps/..." required>
       </div>
     </div>
     <div class="row mb-2">
       <div class="form-group col-4">
-        <label for="image"><i class="fas fa-camera-retro mr-1" required></i>圖片</label>
-        <input type="text" class="form-control" name="image" id="image" placeholder="請附上餐廳圖片網址">
+        <label for="image"><i class="fas fa-camera-retro mr-1" ></i>圖片</label>
+        <input type="url" class="form-control" name="image" id="image" placeholder="請附上餐廳圖片網址" required>
       </div>
       <div class="form-group col-8">
         <label for="description"><i class="far fa-edit mr-1"></i>補充資訊</label>
-        <textarea class="form-control" name="description" id="description" cols="20" rows="2"></textarea>
+        <textarea class="form-control" name="description" id="description" cols="20" rows="2" required></textarea>
       </div>
     </div>
     <div class="d-flex flex-row-reverse justify-content-center mt-4">
