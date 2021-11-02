@@ -1,8 +1,9 @@
-// 這裡想不到要怎麼抓從server傳過來的restaurants，所以自行宣告restaurants長度
-const restaurants = []
+const search = document.querySelector('#search')
+const filtered_restaurant_length = Number(search.dataset.length)
 
-if (restaurants.length <= 0) {
-  swal.fire({
+
+if (search.value === undefined || filtered_restaurant_length === 0) {
+  Swal.fire({
     icon: 'error',
     title: '非常抱歉',
     text: '沒有找到相符的餐廳!',
